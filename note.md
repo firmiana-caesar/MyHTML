@@ -74,3 +74,15 @@ style="text-align:center"
 <a href="#tips">注意事项</a>
 其他页面指向该锚的链接
 <a href="http://www.baidu.com#tips">注意事项</a>
+
+插入图像：
+图像标签<img>源属性Src
+<img src="url"/>
+替换文本属性alt
+<img src="url"alt="textfiled">
+网页背景
+<body background="url">
+调整图片排列方式使用align属性
+使用width和height属性调整图片大小
+将图片作为链接
+<a href="url"><img border="0" src="url"/></a>
