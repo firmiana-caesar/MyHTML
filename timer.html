@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+	</head>
+	<script>
+			var timerID;
+
+			document.onkeydown = function(event){
+			var event = event || window.event;
+			document.getElementById("Text2").innerText = event.keyCode;
+			}
+
+			document.onmousemove = function(event){
+				var event = event || window.event;
+				document.getElementById("Text2").innerText = event.clientX + "," + event.clientY;
+			}			
+
+			function myfun(){
+				timerID = window.setInterval("myTimer()", 1000);
+			}
+
+			function myTimer(){
+				var dd = new Date();
+				var h = dd.getHours();if (h < 10) h = "0" + h;
+				var m = dd.getMinutes(); if (m < 10) m = "0" + m;
+				var s = dd.getSeconds(); if (s < 10) s = "0" + s;
+				Text1.value = dd.getFullYear() + "年" + (dd.getMonth() + 1) + "月" +dd.getDate() + "日" + h + ":" + m + ":" + s;
+			
+			} 
+
+			function stopTimer(){
+				window.clearInterval(timerID);
+			}
+
+			//function GetKeyCode(){
+				//alert(window.event.keyCode);
+			//	if(windoe.event.keyCode == 13) myfun();
+			//}
+	</script>
+
+	<body>
+		<div input id = "Text2" type = "text"></div>
+		<input id = "Text1" type = "text"/>
+		<input id = "Button1" type = "button" value = "start" onclick="myfun();" accesskey="M"/>
+		<input id = "Button2" type = "button" value = "stop" onclick = "stopTimer();"/>
+	</body>
+</html>
+
